@@ -1,0 +1,102 @@
+{
+  "waypoints": [
+    {
+      "anchorPoint": {
+        "x": 6.92,
+        "y": 3.63
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 6.375177661347359,
+        "y": 4.573659971644864
+      },
+      "holonomicAngle": -60.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [
+          "waitIntake",
+          "groundIntakeCube"
+        ],
+        "executionBehavior": "parallelDeadline",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 4.1591419016171365,
+        "y": 4.4
+      },
+      "prevControl": {
+        "x": 5.10104165163369,
+        "y": 4.4
+      },
+      "nextControl": {
+        "x": 3.056425661875796,
+        "y": 4.4
+      },
+      "holonomicAngle": 180.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallelDeadline",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 2.5,
+        "y": 4.1
+      },
+      "prevControl": {
+        "x": 2.805948779131104,
+        "y": 4.1
+      },
+      "nextControl": null,
+      "holonomicAngle": 180.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [
+          "waitScoreCube1",
+          "scoreCube1"
+        ],
+        "executionBehavior": "parallelDeadline",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    }
+  ],
+  "maxVelocity": 4.0,
+  "maxAcceleration": null,
+  "isReversed": null,
+  "markers": [
+    {
+      "position": 0.0,
+      "names": [
+        "postGroundIntake"
+      ]
+    },
+    {
+      "position": 1.0,
+      "names": [
+        "prepScoreCube1"
+      ]
+    },
+    {
+      "position": 1.8975142045454536,
+      "names": [
+        "forceCubeShot"
+      ]
+    }
+  ]
+}

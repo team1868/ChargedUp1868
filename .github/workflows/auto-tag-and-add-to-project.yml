@@ -1,0 +1,30 @@
+name: Label issues
+on:
+  issues:
+    types: [opened]
+jobs:
+  label_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["Needs Triage"]
+            })
+
+  add-to-project:
+    if: github.repository == 'team1868/offseason2023'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/team1868/projects/5
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          
+

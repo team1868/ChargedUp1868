@@ -1,0 +1,65 @@
+{
+  "waypoints": [
+    {
+      "anchorPoint": {
+        "x": 2.3,
+        "y": 1.05
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 4.49073299720831,
+        "y": 0.25263839779139174
+      },
+      "holonomicAngle": 170.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [
+          "waitScoreCube2",
+          "scoreCube2"
+        ],
+        "executionBehavior": "parallelDeadline",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 7.1,
+        "y": 2.55
+      },
+      "prevControl": {
+        "x": 6.233974596215561,
+        "y": 2.05
+      },
+      "nextControl": null,
+      "holonomicAngle": 30.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    }
+  ],
+  "markers": [
+    {
+      "position": 0.06,
+      "names": [
+        "postScore"
+      ]
+    },
+    {
+      "position": 0.25,
+      "names": [
+        "prepGroundIntakeCone"
+      ]
+    }
+  ]
+}

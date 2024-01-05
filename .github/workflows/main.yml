@@ -1,0 +1,38 @@
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    name: "build and format"
+    runs-on: ubuntu-latest
+    container: wpilib/roborio-cross-ubuntu:2023-22.04
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - uses: actions/checkout@v3
+    - uses: DoozyX/clang-format-lint-action@v0.14
+      with:
+        source: '.'
+        exclude: './lib'
+        extensions: 'java,h,cpp,c'
+        clangFormatVersion: 14
+    # - uses: EndBug/add-and-commit@v4
+    #   with:
+    #     author_name: Clang Format Robot
+    #     author_email: spacecookies.data@gmail.com
+    #     message: 'Committing clang-format changes'
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Grant execute permission for gradlew
+    #   run: chmod +x gradlew
+    - name: Compile and run tests on robot code
+      run: ./gradlew build

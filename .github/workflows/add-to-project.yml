@@ -1,0 +1,16 @@
+name: Auto Assign to Project(
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  add-to-project:
+    if: github.repository == 'team1868/offseason2023'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/team1868/projects/5
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          

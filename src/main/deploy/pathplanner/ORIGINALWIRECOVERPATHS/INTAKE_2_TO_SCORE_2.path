@@ -1,0 +1,118 @@
+{
+  "waypoints": [
+    {
+      "anchorPoint": {
+        "x": 7.05,
+        "y": 2.1
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 6.658734878981326,
+        "y": 1.4223089311660713
+      },
+      "holonomicAngle": 60.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [
+          "waitIntake",
+          "groundIntakeCone"
+        ],
+        "executionBehavior": "parallelDeadline",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 5.1,
+        "y": 1.4
+      },
+      "prevControl": {
+        "x": 6.201856493963267,
+        "y": 1.4
+      },
+      "nextControl": {
+        "x": 4.714998381246025,
+        "y": 1.4
+      },
+      "holonomicAngle": 180.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 3.2,
+        "y": 1.4
+      },
+      "prevControl": {
+        "x": 3.579492085620951,
+        "y": 1.4
+      },
+      "nextControl": {
+        "x": 2.8205079143790495,
+        "y": 1.4
+      },
+      "holonomicAngle": 180.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [
+          "waitScoreCone0",
+          "forceConeShot"
+        ],
+        "executionBehavior": "parallelDeadline",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 2.4,
+        "y": 1.65
+      },
+      "prevControl": {
+        "x": 2.5805399661959916,
+        "y": 1.4985089809521845
+      },
+      "nextControl": null,
+      "holonomicAngle": 160.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    }
+  ],
+  "markers": [
+    {
+      "position": 0.0,
+      "names": [
+        "postGroundIntakeCone"
+      ]
+    },
+    {
+      "position": 2.95,
+      "names": [
+        "forceConeShot"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+name: Add Template to Issue
+on:
+  issues:
+    types: [labeled]
+jobs:
+  add-template:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          GH_KEY: ${{ secrets.STEVE_KEY }}
+          TEMPLATE_PATH: .github/templates
+        run: |
+            SSH_PATH=~/.ssh/id_rsa
+            label="${{ github.event.label.name }}"
+            filename="$TEMPLATE_PATH/label-$label.md"
+            repo="git@github.com:$OWNER/$REPO"
+            mkdir ${SSH_PATH%/*}
+            echo "$GH_KEY" > $SSH_PATH
+            chmod 600 $SSH_PATH
+            git clone $repo --sparse --depth 1 --no-checkout
+            cd $REPO
+            git sparse-checkout set $TEMPLATE_PATH
+            git checkout HEAD
+            if [[ -f "$filename" ]] ; then
+               template=$(cat $filename)
+               issue=${{ github.event.issue.number }}
+               gh issue comment $issue -F $filename
+               echo "added template $filename to issue $issue"
+            else
+              echo "no template exists for label $label."
+            fi
+            rm $SSH_PATH
